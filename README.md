@@ -13,11 +13,11 @@
 - 支持图片下载
 - 支持 Instagram 公开图片、轮播、Reel 等内容的预览与批量下载
 - 内置或调用 `yt-dlp`、`ffmpeg`、`ffprobe` 等工具完成媒体处理
-- Windows 打包版本可直接运行，不需要用户额外安装 Node.js、Python、yt-dlp 或 ffmpeg
+- Windows 和 macOS 打包版本可直接运行，不需要用户额外安装 Node.js、yt-dlp 或 ffmpeg
 
 ## 安装与使用
 
-### 方式一：使用打包版本
+### 方式一：使用 Windows 打包版本
 
 1. 下载发布包并完整解压。
 2. 保持文件夹结构不变，不要只复制单个 `VideoDownloader.exe`。
@@ -43,7 +43,16 @@ VideoDownloader/
     instagram_provider.exe
 ```
 
-### 方式二：从源码运行
+
+### 方式二：使用 macOS 打包版本
+
+1. 在 Release 页面下载 `VideoDownloader-mac.zip` 并完整解压。
+2. 打开 `VideoDownloader-mac` 文件夹，双击 `start.command`。
+3. 如果 macOS 提示无法打开，请右键 `start.command` 并选择“打开”。
+4. 启动后会自动打开 `http://127.0.0.1:4173`。
+5. 不要直接打开 `index.html`，否则页面没有本地服务，无法下载。
+
+### 方式三：从源码运行
 
 适合开发者或需要自行调试的人。
 
