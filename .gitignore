@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.build/
+dist/
+*.log
+
+# Local/runtime files
+*.tmp
+*.temp
+*.cache
+cookie.txt
+bin/
+tools/
+bin/cookie.txt
+tools/cookie.txt
+
+# Release packages and generated binaries
+*.zip
+*.7z
+*.rar
+*.exe
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

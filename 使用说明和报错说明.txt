@@ -1,0 +1,141 @@
+VideoDownloader 使用说明和报错说明
+
+一、如何使用
+
+1. 解压整个 VideoDownloader 文件夹。
+2. 双击 VideoDownloader.exe。
+3. 程序会自动启动本地后端服务，并自动打开默认浏览器。
+4. 在页面中粘贴视频链接。
+5. 点击下载按钮。
+6. 下载完成后，浏览器会保存文件；如果浏览器询问保存位置，请按浏览器提示选择。
+
+注意：
+- 不需要安装 Node.js。
+- 不需要安装 Python。
+- 不需要安装 yt-dlp。
+- 不需要安装 ffmpeg。
+- 不需要配置环境变量。
+- 不要只复制 VideoDownloader.exe 单个文件使用，必须保留整个文件夹结构。
+
+二、文件夹内容
+
+VideoDownloader.exe
+  启动器，内部包含 Node 运行时和启动脚本。
+
+server.js
+  本地后端服务文件。
+
+index.html / styles.css / script.js / assets
+  本地网页界面文件。
+
+bin/yt-dlp.exe
+  视频下载工具。
+
+bin/ffmpeg.exe
+  音视频合并和转换工具。
+
+bin/ffprobe.exe
+  ffmpeg 附带的媒体检测工具，部分网站或格式可能会用到。
+
+bin/instagram_provider.exe
+  Instagram 图片、轮播和 Reel 下载工具，已经包含 instaloader，不需要额外安装 Python 或 pip 包。
+
+三、常见报错说明
+
+1. 页面打不开，或浏览器提示无法访问 127.0.0.1:4173
+可能原因：
+- 程序被 Windows 安全软件或 SmartScreen 拦截。
+- 本地服务没有启动成功。
+- 4173 端口被其他程序占用。
+
+处理方法：
+- 关闭后重新双击 VideoDownloader.exe。
+- 如果 Windows 提示风险，请确认这是你自己解压的文件后选择允许运行。
+- 如果仍然打不开，重启电脑后再试。
+
+2. Could not start yt-dlp / ENOENT / 找不到文件
+可能原因：
+- bin/yt-dlp.exe 被删除、隔离或没有随文件夹一起解压。
+
+处理方法：
+- 检查 bin 文件夹里是否有 yt-dlp.exe。
+- 重新解压完整压缩包。
+- 检查安全软件是否隔离了 yt-dlp.exe。
+
+3. ffmpeg not found / 找不到 ffmpeg
+可能原因：
+- bin/ffmpeg.exe 被删除、隔离或没有随文件夹一起解压。
+
+处理方法：
+- 检查 bin 文件夹里是否有 ffmpeg.exe。
+- 重新解压完整压缩包。
+- 检查安全软件是否隔离了 ffmpeg.exe。
+
+4. EACCES / EPERM / 权限不足
+可能原因：
+- 当前文件夹没有运行权限。
+- 安全软件拦截了 exe、yt-dlp 或 ffmpeg。
+- 文件来自压缩包或网络下载，被 Windows 标记为不可信。
+
+处理方法：
+- 将文件夹移动到桌面、下载或文档目录后再运行。
+- 右键 VideoDownloader.exe，选择属性，如有“解除锁定”请勾选。
+- 在安全软件里允许 VideoDownloader.exe、bin/yt-dlp.exe、bin/ffmpeg.exe 运行。
+
+5. yt-dlp exited with code xxx
+可能原因：
+- 视频链接不支持。
+- 网站需要登录、验证码或地区限制。
+- 网络连接失败。
+- yt-dlp 版本过旧。
+
+处理方法：
+- 换一个链接测试。
+- 确认浏览器能正常打开该视频。
+- 更新 bin/yt-dlp.exe 后再试。
+
+6. Cannot find module
+可能原因：
+- server.js 不在 VideoDownloader.exe 同一个文件夹。
+- 文件夹结构被改动。
+
+处理方法：
+- 不要单独移动 VideoDownloader.exe。
+- 保持解压后的完整文件夹结构。
+- 重新解压完整压缩包。
+
+7. Could not start Instagram provider / 找不到 instagram_provider.exe
+可能原因：
+- bin/instagram_provider.exe 被删除、隔离或没有随文件夹一起解压。
+
+处理方法：
+- 检查 bin 文件夹里是否有 instagram_provider.exe。
+- 重新解压完整压缩包。
+- 检查安全软件是否隔离了 instagram_provider.exe。
+
+8. Instagram provider exited with code xxx
+可能原因：
+- Instagram 链接需要登录、验证码或地区访问限制。
+- 该内容已经删除、设为私密或临时不可访问。
+- 网络连接失败，或 Instagram 页面结构变化导致 instaloader 暂时失效。
+
+处理方法：
+- 确认浏览器里能正常打开该 Instagram 链接。
+- 换一个公开视频或图片链接测试。
+- 如果多个链接都失败，之后可以重新打包新版 instaloader。
+
+四、推荐目录结构
+
+VideoDownloader/
+  VideoDownloader.exe
+  server.js
+  index.html
+  styles.css
+  script.js
+  assets/
+  bin/
+    yt-dlp.exe
+    ffmpeg.exe
+    ffprobe.exe
+    instagram_provider.exe
+  使用说明和报错说明.txt

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-background="blue">
+    <main class="page-shell" id="appRoot" aria-label="Simple tools">
+      <section class="artboard" aria-label="Productivity tool">
+        <div class="settings-widget" id="settings-widget">
+          <div class="settings-popover" id="settings-popover" role="menu" aria-label="Settings menu" hidden>
+            <div class="settings-panel" data-settings-panel="main">
+              <button class="settings-row" type="button" data-settings-action="background" role="menuitem">
+                <span>Background</span>
+                <span class="settings-chevron" aria-hidden="true">&rsaquo;</span>
+              </button>
+              <div class="settings-row settings-row-static">
+                <span>Version</span>
+                <strong id="settings-version">Loading</strong>
+              </div>
+              <button class="settings-row" type="button" data-settings-action="check-update" role="menuitem">
+                <span>Check for Updates</span>
+                <span class="settings-muted" id="update-status">Coming soon</span>
+              </button>
+            </div>
+
+            <div class="settings-panel" data-settings-panel="background" hidden>
+              <button class="settings-row settings-back" type="button" data-settings-action="main" role="menuitem">
+                <span class="settings-chevron" aria-hidden="true">&lsaquo;</span>
+                <span>Background</span>
+              </button>
+              <div class="background-picker" role="radiogroup" aria-label="Background selection">
+                <p class="background-choice-title" id="background-choice-title">Color - Blue</p>
+                <button class="background-swatch background-swatch-blue" type="button" data-background-choice="blue" role="radio" aria-checked="true" aria-label="Blue background"></button>
+                <button class="background-swatch background-swatch-green" type="button" data-background-choice="sakura" role="radio" aria-checked="false" aria-label="Green background"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h1 aria-label="Simple tools, nothing more.">
+          <span id="title-text">Simple tools, nothing more.</span>
+        </h1>
+
+        <div class="tool-cluster" aria-label="Video download controls">
+          <div class="input-row">
+            <label class="link-field">
+              <span class="sr-only">Paste link</span>
+              <input id="link-input" type="text" placeholder="Paste the link here." aria-label="Paste the link here." autocomplete="off" spellcheck="false" />
+            </label>
+          </div>
+
+          <div class="result-menu" id="result-menu" role="menu" aria-label="Detected link options"></div>
+        </div>
+
+        <p class="credit">Used solely as a productivity tool; created by wujie.</p>
+      </section>
+
+      <button class="settings-button glass-circle-button" id="glassMenuButton" type="button" aria-label="Open settings" aria-expanded="false" aria-controls="settings-popover">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <button class="action-button glass-circle-button" id="glassActionButton" type="button" aria-label="Paste from clipboard" data-state="paste">
+        <span class="icon-state icon-state-paste button-icon" id="icon-paste" aria-hidden="true">
+          <img src="./assets/paste-icon.svg" alt="" draggable="false" />
+        </span>
+        <span class="icon-state icon-state-download off button-icon" id="icon-download" aria-hidden="true">
+          <svg viewBox="0 0 20 20" focusable="false">
+            <path d="M10 3.25v9.15" />
+            <path d="m6.4 9.05 3.6 3.65 3.6-3.65" />
+            <path d="M4.55 16.25h10.9" />
+          </svg>
+        </span>
+        <span class="progress-ring off" id="progress-ring" aria-hidden="true">
+          <svg viewBox="0 0 32 32" focusable="false">
+            <circle class="ring-track" cx="16" cy="16" r="12" />
+            <circle class="ring-arc" id="ring-arc" cx="16" cy="16" r="12" />
+          </svg>
+        </span>
+        <span class="icon-state icon-state-check off button-icon" id="icon-check" aria-hidden="true">
+          <svg viewBox="0 0 20 20" focusable="false">
+            <path d="m4.35 10.35 4 4.05 7.3-8.8" />
+          </svg>
+        </span>
+      </button>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

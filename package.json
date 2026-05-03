@@ -1,0 +1,17 @@
+{
+  "name": "simple-tools",
+  "version": "1.0.4",
+  "private": true,
+  "bin": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "patch-package": "^8.0.1",
+    "postject": "^1.0.0-alpha.6"
+  },
+  "dependencies": {
+    "@ybouane/liquidglass": "^1.0.3"
+  }
+}
